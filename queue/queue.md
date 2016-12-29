@@ -226,11 +226,15 @@ void QueueTraverse(LinkQueue Q,void(*vi)(QElemType))
 ```
 3.队列进阶
 ----
-* 无锁队列
+* 无锁队列[lockfree](./lockfree.md)
 * 等待队列
 
 
 
-参考文档 [std::queue](http://www.cplusplus.com/reference/queue/queue/)  
-参考博客 [blog1](http://blog.csdn.net/leichelle/article/details/7546775) [blog2](http://yangzhizhen.iteye.com/blog/1472348) [blog3](http://blog.csdn.net/luoweifu/article/details/8507835) 
+参考文档 
+* [std::queue](http://www.cplusplus.com/reference/queue/queue/)  
+参考博客 
+* [blog1](http://blog.csdn.net/leichelle/article/details/7546775) 
+* [blog2](http://yangzhizhen.iteye.com/blog/1472348) 
+* [blog3](http://blog.csdn.net/luoweifu/article/details/8507835) 
 
