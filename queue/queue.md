@@ -1,7 +1,5 @@
-Queue学习笔记
-====  
-1.队列是什么
-----
+# Queue学习笔记 
+## 1.队列是什么
 * 队列是一种可以实现“先进先出”(FIFO)的存储结构。  
 ![pic](./queue_1.png)    
 * 队首(front) ：允许进行删除的一端称为队首
@@ -16,8 +14,21 @@ Queue学习笔记
   * DeQueue（）        ——出队列
   * IsQueueEmpty（）   ——判断队列是否为空
   * IsQueueFull（）    ——判断队列是否已满
-
-2.队列的表示和实现
+## 2.队列操作模型
+- 单生产者——单消费者
+![pic](./queue_5.png)
+- 多生产者——单消费者
+![pic](./queue_6.png)
+- 单生产者——多消费者
+![pic](./queue_7.png)
+- 多生产者——多消费者
+![pic](./queue_8.png)
+## 3.队列数据定长与变长
+- 队列数据定长  
+![pic](./queue_9.png)
+- 队列数据变长  
+![pic](./queue_10.png)
+## 4.队列的表示和实现
 ----
 * 静态数组队列（循环数组队列实现）  
 ![pic](./queue_4.png)    
@@ -224,8 +235,7 @@ void QueueTraverse(LinkQueue Q,void(*vi)(QElemType))
   printf("\n");  
 }  
 ```
-3.队列进阶
-----
+## 5.队列进阶
 * 无锁队列[lockfree](./lockfree.md)
 * 等待队列
 
