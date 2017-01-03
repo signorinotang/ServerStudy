@@ -3,7 +3,7 @@ CAS笔记
 1关于CAS等原子操作
  * CAS操作——Compare & Set 或是 Compare & Swap，现在几乎所有的CPU指令都支持CAS的原子操作，X86下对应的是 CMPXCHG 汇编指令。有了这个原子操作，我们就可以用其来实现各种无锁（lock free）的数据结构。
  * 这个操作用C语言来描述就是下面这个样子：（代码来自Wikipedia的[Compare And Swap](https://en.wikipedia.org/wiki/Compare-and-swap)词条）意思就是说，看一看内存*reg里的值是不是oldval，如果是的话，则对其赋值newval。  
- ```c++
+```c++
  int compare_and_swap (int* reg, int oldval, int newval)
 {
     int old_reg_val = *reg;
@@ -55,5 +55,7 @@ bool atomic_compare_exchange_weak( volatile std::atomic<T>* obj,
 * 这个例子你可能没有看懂，维基百科上给了一个活生生的例子:  
   你拿着一个装满钱的手提箱在飞机场，此时过来了一个火辣性感的美女，然后她很暖昧地挑逗着你，并趁你不注意的时候，把用一个一模一样的手提箱和你那装满钱的箱子调了个包，然后就离开了，你看到你的手提箱还在那，于是就提着手提箱去赶飞机去了。
 
-3 解决ABA的问题
-* //TODO
+3 解决ABA的问题(DCAS)
+* 使用double-CAS（双保险的CAS），例如，在32位系统上，我们要检查64位的内容
+  * 一次用CAS检查双倍长度的值，前半部是指针，后半部分是一个计数器。
+  * 只有这两个都一样，才算通过检查，要吧赋新的值。并把计数器累加1。
