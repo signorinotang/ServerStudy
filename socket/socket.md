@@ -14,10 +14,10 @@
 ## 3. 什么是Socket？[socket man page](http://man7.org/linux/man-pages/man7/socket.7.html)
 - 上面我们已经知道网络中的进程是通过socket来通信的，那什么是socket呢？socket起源于Unix，而Unix/Linux基本哲学之一就是`“一切皆文件”`，都可以用“打开open –> 读写write/read –> 关闭close”模式来操作。我的理解就是Socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭），这些函数我们在后面进行介绍。
 ## 4. socket的基本操作 
-- socket()函数 
-``` 
-sockfd = socket(int domain, int socket_type, int protocol);
-
+- socket()函数   
+`sockfd = socket(int domain, int socket_type, int protocol);`
+- domain
+```
 creates an endpoint for communication and returns a file descriptor that refers to that endpoint.
 The domain argument specifies a communication domain; this selects the protocol family which will be used for communication.
 These families are defined in <sys/socket.h>.  The currently understood formats include:
@@ -29,7 +29,9 @@ domain参数指定一个通信用的协议域（domain 协议域，又称为协�
 AF_UNIX, AF_LOCAL   Local communication        用于本地通信
 AF_INET             IPv4 Internet protocols    用于IPv4网络通信
 AF_INET6            IPv6 Internet protocols    用于IPv6网络通信
-
+```
+- socket_type
+```
 The socket has the indicated type, which specifies the communication semantics.  Currently defined types are:
 
 socket需要指定用于通信的类型  目前有这些常用定义：
@@ -46,6 +48,29 @@ SOCK_SEQPACKET
 Provides a sequenced, reliable, two-way connection-based data transmission path for datagrams of fixed maximum length; a consumer is required to read an entire packet with each input system call.
 提供顺序、可靠、双向连接—基于数据报的固定数据传输路径最大长度；消费者需要读取每个输入系统调用的整个数据包。
 ```
-  
+- protocol
+```
+The protocol specifies a particular protocol to be used with the
+socket.  Normally only a single protocol exists to support a
+particular socket type within a given protocol family, in which case
+protocol can be specified as 0.  However, it is possible that many
+protocols may exist, in which case a particular protocol must be
+specified in this manner.  The protocol number to use is specific to
+the “communication domain” in which communication is to take place;
+如果socket 只有一个对应的 protocol 则该参数可为0 
+不然必须指定一个 socket对应的protocol
+```
+- sockfd
+```
+ On success, a file descriptor for the new socket is returned.  On error, -1 is returned, and errno is set appropriately.
+ 成功返回描述符  失败返回-1
+```
+
+- bind()函数  
+`int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);`
+
+
+
+
 
 官方文档http://man7.org/linux/man-pages/man7/socket.7.html 

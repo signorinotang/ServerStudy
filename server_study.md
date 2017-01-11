@@ -1,8 +1,8 @@
-服务器学习笔记
-====  
-1. MarkDown Notes
+# 服务器学习笔记
+
+## 1. MarkDown Notes
 [MarkDown](./markdown/markdown.md)
-2. 数据结构之队列  
+## 2. Data Sructure - Queue
 [Queue](./queue/queue.md)  
-3. Socket Notes
+## 3. Socket Notes
 [Socket](./socket/socket.md)
