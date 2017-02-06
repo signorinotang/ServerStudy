@@ -6,3 +6,5 @@
 [Queue](./queue/queue.md)  
 ## 3. Socket Notes
 [Socket](./socket/socket.md)
+## 4. Linux Shell & Server Manage Notes
+[Linux Shell & Server Manage](./server_manage/server_manage.md)
