@@ -8,3 +8,7 @@
 [Socket](./socket/socket.md)
 ## 4. Linux Shell & Server Manage Notes
 [Linux Shell & Server Manage](./server_manage/server_manage.md)
+## 5. Serialize & Deserialize
+[serialize & Deserialize](./serialize/serialize.md)
+## 6. Database
+[Database](./database/database.md)
