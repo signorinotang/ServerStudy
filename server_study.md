@@ -6,9 +6,11 @@
 [Queue](./queue/queue.md)  
 ## 3. Socket Notes
 [Socket](./socket/socket.md)
-## 4. Linux Shell & Server Manage Notes
+## 4. network programming
+[network programming](./network_programming/1.md)
+## 5. Linux Shell & Server Manage Notes
 [Linux Shell & Server Manage](./server_manage/server_manage.md)
-## 5. Serialize & Deserialize
+## 6. Serialize & Deserialize
 [serialize & Deserialize](./serialize/serialize.md)
-## 6. Database
+## 7. Database
 [Database](./database/database.md)
