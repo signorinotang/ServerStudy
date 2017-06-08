@@ -1,3 +1,4 @@
+#pragma once
 #include <thread>
 
 class thread_scoped
@@ -17,7 +18,6 @@ public:
 	thread_scoped(thread_scoped const&) = delete;
 	thread_scoped & operator = (thread_scoped const&) = delete;
 
-}
-
+};
 //example
 //thread_scoped t(std::thread(fun));

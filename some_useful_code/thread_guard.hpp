@@ -1,3 +1,4 @@
+#pragma once
 #include <thread>
 
 class thread_guard
@@ -14,9 +15,8 @@ public:
 	thread_guard(thread_guard const&) = delete;
 	thread_guard& operator = (thread_guard const&) = delete;
 
-}
+};
 
 //example
 //std::thread t(fun);
 //thread_guard g(t);
-
