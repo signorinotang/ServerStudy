@@ -11,3 +11,12 @@ public:
 		return msg_.c_str();
 	}
 };
+
+template<typename T>
+class thread_safe_stack {
+	std::stack<T> data;
+	mutable std::mutex m;
+
+
+};
+
